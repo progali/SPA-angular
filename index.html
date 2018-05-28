@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="app04">
+<head>
+	<title> </title>
+	<meta charset="utf-8" >
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/angular.js"></script>
+	<script src="js/app04.js"></script>
+	
+</head>
+<body >
+	
+	<div class="container top" ng-controller="Controller1">
+			<!-- <h3 ng-repeat="repeatChar in con1.name.split('')" >{{$index + repeatChar}} </h3> -->
+			{{name}}
+			<table class="table">
+				<thead>
+					<tr>
+						<th>name</th>
+						<th>Gender</th>
+						<th>email</th>
+						<th>inscriptionDate</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr  ng-repeat="item in objectArray">
+						<th>{{item.name}}</th>
+						<th>{{item.Gender}}</th>
+						<th>{{item.email}}</th>
+						<th>{{item.inscriptionDate}}</th>
+					</tr>
+				</tbody>
+			</table>
+	
+	
+		<form  ng-submit="SubmitForm()">
+		<div class="panel-body col-xs-12 col-sm-5 col-md-5" >
+			<div class="form-group  " >
+				<input type="text" class="form-control" name="name" ng-model="Object.name" ></input>
+				
+			</div>
+			<div class="form-group" >
+				<input type="email" name="email" ng-model="Object.email" class="form-control" ></input>
+				
+			</div>
+			<div class="form-group" >
+				<label for="form-control" >Model</label>
+				<select class="form-control" ng-model="Object.Gender" >
+					<option>Male</option>
+					<option>Femal</option>
+					
+				</select>
+				
+			</div>
+			<div class="form-group" >
+				<input type="date" name="date" placeholder="jj/mm/yyyy" ng-model="con1.Object.inscriptionDate" class="form-control" ></input>
+				
+			</div>
+			<div class="form-group" >
+			
+			<button type="button" class="btn btn-success btn-lg btn-block" >
+				<span class="glyphicon glyphicon-ok" ></span>Save </button>
+			</div>
+			<div class="form-group" >
+				<a href="" class="btn btn-default btn-lg btn-block"  ><span class="glyphicon glyphicon-remove" ></span>Cancel </a>
+			</div>
+		</div>
+		</form>
+	
+	
+	
+	</div>
+
+</body>
+</html>
